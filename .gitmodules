@@ -1,3 +1,6 @@
 [submodule "js/mylibs/flot"]
 	path = js/mylibs/flot
 	url = https://github.com/flot/flot
+[submodule "flot"]
+	path = flot
+	url = https://github.com/flot/flot

@@ -12,7 +12,7 @@
 	function globalStats($db, $days, $subset, $max)
 	{
 		$data     = array();
-		$topItems = array();
+		$topFoods = array();
 		$topShops = array();
 
 		$time = mktime(23, 59, 59) - $days * 24 * 60 * 60;
@@ -25,7 +25,7 @@
 				$topItem->count  = intval($topItem->count);
 				$topItem->sales  = intval($topItem->sales);
 	
-				array_push($topItems, $topItem);
+				array_push($topFoods, $topItem);
 			}
 		}
 
@@ -41,7 +41,7 @@
 			}
 		}
 
-		$data['topItems'] = $topItems;
+		$data['topfoods'] = $topFoods;
 		$data['topshops'] = $topShops;
 
 		echo json_encode($data);

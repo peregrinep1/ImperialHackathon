@@ -16,12 +16,14 @@
 
 	// If the type is 'single' and we have a numerical College Identifier then get the stats for that ID
 	if(isset($_GET['type']) && $_GET['type'] == 'single' && isset($_GET['cid']) && is_numeric($_GET['cid'])) {
+		// Extract out the maximum number of items to be returned, default to -1 (-> then converted to ALL)
+		$max = isset($_GET['max']) && is_numeric($_GET['max']) ? $_GET['max'] : 'ALL';
 		// Extract out the number of days and if it has not been requested or invalidly set then default to 7
 		$days = isset($_GET['days']) && is_numeric($_GET['days']) ? $_GET['days'] : 7;
 		// Extract out the CID
 		$cid  = $_GET['cid'];
 		// Get the stats
-		statsForCid($db, $cid, $days);
+		statsForCid($db, $cid, $days, $max);
 	} else if(isset($_GET['type']) && $_GET['type'] == 'global') {
 		// Extract out the number of days and if it has not been requested or invalidly set then default to 30
 		$days = isset($_GET['days']) && is_numeric($_GET['days']) ? $_GET['days'] : 30;
