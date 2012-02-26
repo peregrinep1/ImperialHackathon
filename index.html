@@ -23,6 +23,7 @@
 
   <!-- CSS: implied media=all -->
   <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <!-- end CSS-->
 
@@ -37,27 +38,62 @@
 <body>
 
   <div id="container">
-    <header>
+    <div id="main" role="main" class="container">
 
-    </header>
-    <div id="main" role="main">
+      <div class="row">
+        <div id="heading" class="grid12">
+          <h1>The Imperial Foodie</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="graph" class="grid12">
+          <!-- plot magic happens in here -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="tagline" class="grid12">
+          <p>You have spent £<span class="moneyspent">13.37</span> on food at Imperial this week!</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span4">
+          <h2>Daily Breakdown</h2>
+          <table class="table breakdown" id="dailybreakdown">
+            <!-- js magic happens here -->
+          </table>
+        </div>
+        <div class="span4">
+          <h2>Top Foods</h2>
+          <table class="table breakdown" id="topitems">
+            <!-- js magic happens here -->
+          </table>
+        </div>
+        <div class="span4">
+          <h2>Top Shops</h2>
+          <table class="table breakdown" id="topshops">
+            <!-- js magic happens here -->
+          </table>
+        </div>
+      </div>
 
     </div>
-    <footer>
-
-    </footer>
   </div> <!--! end of #container -->
 
 
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
 
   <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="js/bootstrap.min.js"></script>
   <script defer src="js/plugins.js"></script>
+  <script defer src="js/mylibs/flot/jquery.flot.js"></script>
   <script defer src="js/script.js"></script>
   <!-- end scripts-->
 
